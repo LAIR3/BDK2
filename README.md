@@ -1,17 +1,28 @@
-# Polygon CDK Kurtosis Package
+# LAIR3-BDK layer 3 Blockchain Deployment Kit
+lair: a place where a wild animal, especially a fierce or dangerous one, lives
 
-A [Kurtosis](https://github.com/kurtosis-tech/kurtosis) package that deploys a private, portable, and modular Polygon CDK devnet.
+A [Kurtosis](https://github.com/kurtosis-tech/kurtosis) package that deploys a private, portable, and modular Blockchain Deployment Kit layer3 BDK as devnet<br />
+LAIR3-BDK is derived as modest improvements from Polygon-SDK and Kurtosis-CDK and is dual licenced with inspiration from<br />
+<a href="http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf">The Knowledge Complexity of Interactive Proof Systems</a><br />
 
+## License
+
+Copyright (c) 2024 PT Services DMCC
+
+Licensed under either:
+
+- Apache License, Version 2.0, ([LICENSE-APACHE](./LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0), or
+- MIT license ([LICENSE-MIT](./LICENSE-MIT) or http://opensource.org/licenses/MIT)
 ## Getting Started
 
 ![Architecture Diagram](./docs/img/architecture.png)
 
 To begin, you will need to install [Docker](https://docs.docker.com/get-docker/) and [Kurtosis](https://docs.kurtosis.com/install/).
 
-You will also need a few other tools. Run this script to check if you have the required versions:
+You will also need a few other tools. Run this script to check you have the required versions.
 
 ```bash
-./scripts/tool_check.sh
+sh scripts/tool_check.sh
 ```
 
 Once that is good and installed on your system, you can run the following command to deploy the complete CDK stack locally.
