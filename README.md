@@ -15,7 +15,7 @@ Licensed under either:
 - MIT license ([LICENSE-MIT](./LICENSE-MIT) or http://opensource.org/licenses/MIT)
 ## Getting Started
 
-![Architecture Diagram](./docs/img/architecture.png)
+![Architecture Diagram](./docs/img/starlark.png)
 
 To begin, you will need to install [Docker](https://docs.docker.com/get-docker/) and [Kurtosis](https://docs.kurtosis.com/install/).
 
