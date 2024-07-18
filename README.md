@@ -6,8 +6,9 @@ LAIR3-BDK is derived from modest improvements to Polygon-SDK and Kurtosis-CDK du
 <a href="http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf">The Knowledge Complexity of Interactive Proof Systems</a><br />
 
 ## License
-CDK (c) 2024 PT Services DMCC<br />
-BDK (c) 2024 Gregory L. Magnusson
+Kurtosis-CDK (c) 2024 PT Services DMCC MIT licence<br />
+Polygon-SDK (c) LGPL-3.0 license<br />
+LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
 
 Licensed under either:
 
