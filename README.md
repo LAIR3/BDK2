@@ -8,9 +8,9 @@ LAIR3-BDK is derived from modest improvements to Polygon-SDK and Kurtosis-CDK du
 ## License
 Kurtosis-CDK (c) 2024 PT Services DMCC MIT licence<br />
 Polygon-SDK (c) LGPL-3.0 license<br />
-LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
+Starlark (c) Apache License Version 2.0<br >
+modifications included for LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
 
-Licensed under either:
 
 - Apache License, Version 2.0, ([LICENSE-APACHE](./LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0), or
 - MIT license ([LICENSE-MIT](./LICENSE-MIT) or http://opensource.org/licenses/MIT)
