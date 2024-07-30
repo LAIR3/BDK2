@@ -1,4 +1,4 @@
-# Python Script for Initializing zkEVM Databases
+# databases.star: Initializing zkEVM Databases
 
 ## Overview
 
