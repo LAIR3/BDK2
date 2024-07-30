@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: MIT
+// THRUST NETWORK TECHNOLOGY fungible minter
+pragma solidity ^0.8.0; 
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract ThrustNetworkTechnology is ERC20 {
+    constructor() ERC20("QUICK", "DEV") {
+        // 100 million QUICK DIRTY with 18 decimals
+        uint256 initialSupply = 100000000 * 10**18;
+        _mint(msg.sender, initialSupply);
+    }
+}
