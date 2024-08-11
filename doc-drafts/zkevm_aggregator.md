@@ -44,7 +44,8 @@ ServiceConfig Details:
     cmd (list):
     The command arguments passed to the entrypoint, specifically to run the aggregation layer with the configuration file located at "/etc/zkevm/agglayer-config.toml"
 ```
-    # example agglayer-config.toml
+# example agglayer-config.toml
+
 ```python
     args = {
     "deployment_suffix": "-prod",
