@@ -15,24 +15,24 @@ You will also need a few other tools. Run this script to check you have the requ
 sh scripts/tool_check.sh
 ```
 
-Once that is good and installed on your system, you can run the following command to deploy the complete CDK stack locally.
+Once that is good and installed on your system, you can run the following command to locally deploy the complete BDK stack
 
-This process typically takes around ten minutes.
+this will take between 5 and 20 minutes depending on your hardware
 
 ```bash
 kurtosis clean --all
-kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
+kurtosis run --enclave bdk-v2 --args-file params.yml --image-download always .
 ```
 
 The command above deploys a BDK stack using [zkevm-node](https://github.com/0xPolygonHermez/zkevm-node) as the sequencer. Alternatively, to launch a CDK stack using [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) as a sequencer, you can run the following command.
 
 ```bash
-kurtosis run --enclave cdk-v1 --args-file cdk-erigon-sequencer-params.yml --image-download always .
+kurtosis run --enclave bdk-v2 --args-file cdk-erigon-sequencer-params.yml --image-download always .
 ```
 
 Let's do a simple L2 RPC test call.
 
-First, you will need to figure out which port Kurtoiss is using for the RPC. You can get a general feel for the entire network layout by running the following command:
+First, you will need to figure out which port Kurtois uses for the RPC. You can get a general feel for the entire network layout by running the following command:
 
 ```bash
 kurtosis enclave inspect cdk-v1
@@ -56,14 +56,14 @@ By default, the CDK is configured in `test` mode, which means there is some pre-
 cast balance --ether 0xE34aaF64b29273B7D567FCFc40544c014EEe9970
 ```
 
-Okay let’s send some transactions...
+# sending transaction
 
 ```bash
 export PK="0x12d7de8621a77640c9241b2595ba78ce443d05e94090365ab3bb5e19df82c625"
 cast send --legacy --private-key "$PK" --value 0.01ether 0x0000000000000000000000000000000000000000
 ```
 
-Okay let’s send even more transactions... Note that this step will assume you have [polygon-cli](https://github.com/maticnetwork/polygon-cli) installed.
+# multisend transactions with polygon-cli [polygon-cli](https://github.com/maticnetwork/polygon-cli) installed.
 
 ```bash
 polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 500 --rate-limit 5 --mode t
@@ -72,14 +72,13 @@ polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosi
 polycli loadtest --rpc-url "$ETH_RPC_URL" --legacy --private-key "$PK" --verbosity 700 --requests 500 --rate-limit 3  --mode uniswapv3
 ```
 
-Pretty often, you will want to check the output from the service. Here is how you can grab some logs:
+# log a service
 
 ```bash
 kurtosis service logs cdk-v1 zkevm-agglayer-001
 ```
 
-In other cases, if you see an error, you might want to get a shell in the container to be able to poke around.
-
+# enter service with shell
 ```bash
 kurtosis service shell cdk-v1 zkevm-node-sequencer-001
 ```
@@ -94,39 +93,13 @@ cast rpc zkevm_verifiedBatchNumber
 
 If the number of verified batches is increasing, then it means the system works properly.
 
-To access the `zkevm-bridge` user interface, open this URL in your web browser.
-
-```bash
-open $(kurtosis port print cdk-v1 zkevm-bridge-proxy-001 web-ui)
-```
-
-After configuration changes or code changes clean up the previous build which stopping and deleting the enclave
+Following configuration or code changes clean up the previous build stopping and deleting the existing enclave
 
 ```bash
 kurtosis clean --all
 ```
 # layer 3 blockchain deployment kit<br />
 instructions are somewhat specific to Ubuntu 22.04LTS<br />
-
-# kurtosis logs directory error
-
-Create Missing Directories:
-It seems the directories /var/log/kurtosis/2024/31 and similar are missing. You can manually create these directories to resolve the issue.
-
-```bash
-sudo mkdir -p /var/log/kurtosis/2024/31
-sudo chown -R $USER:docker /var/log/kurtosis
-```
-Verify Docker Permissions:
-```bash
-sudo chmod -R 755 /var/log/kurtosis
-````
-Restart Kurtosis and Docker:
-```bash
-kurtosis engine restart
-sudo systemctl restart docker
-```
-requirements include but not limited to<br />
 
 
 #  go1.21.6 install on Ubuntu Linux 22.04LTS for amd64 using bash<br />
@@ -170,8 +143,6 @@ docker rmi blockchaindeploymentkit/bdk-toolbox-postgres-pgvectorscale
 docker system prune -a
 docker compose version
 ```
-
-
 modify pgvectorscale as docker build using toolbox.Dockerfile
 ```bash
 docker build -t blockchaindeploymentkit/bdk-toolbox-postgres-pgvectorscale -f docker/toolbox.Dockerfile .
@@ -184,7 +155,6 @@ docker push blockchaindeploymentkit/bdk-toolbox-postgres-pgvectorscale
 docker network ls
 docker network inspect NAME
 ```
-
 # polygon-cli blockchain swiss army knife source build
 
 ```bash
@@ -257,6 +227,33 @@ generic instruction
 docker run --name zkevm-bridge-ui -p 80:8080 -v /path/to/.env:/app/.env leovct/zkevm-bridge-ui:multi-network
 ```
 
+# open the `zkevm-bridge` user interface as URL in your web browser
+
+```bash
+open $(kurtosis port print bdk-v2 zkevm-bridge-proxy-001 web-ui)
+```
+
+# kurtosis logs directory error
+
+Create Missing Directories:
+It seems the directories /var/log/kurtosis/2024/31 and similar are missing. You can manually create these directories to resolve the issue.
+
+```bash
+sudo mkdir -p /var/log/kurtosis/2024/31
+sudo chown -R $USER:docker /var/log/kurtosis
+```
+Verify Docker Permissions:
+```bash
+sudo chmod -R 755 /var/log/kurtosis
+````
+Restart Kurtosis and Docker:
+```bash
+kurtosis engine restart
+sudo systemctl restart docker
+```
+requirements include but not limited to<br />
+
+
 # erigon standalone
 
 ```bash
@@ -300,8 +297,8 @@ kurtosis service shell bdk-v2 zkevm-bridge-ui-001
 Clone the Repository and Install Dependencies
 
 ```bash
-git clone https://github.com/LAIR3/BDK.git
-cd BDK
+git clone https://github.com/LAIR3/BDK2/
+cd BDK2
 sh scripts/tool_check.sh
 ```
 
