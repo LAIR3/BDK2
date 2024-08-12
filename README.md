@@ -4,7 +4,10 @@ lair: a place where a wild animal, especially a fierce or dangerous one, lives<b
 
 A [Kurtosis](https://github.com/kurtosis-tech/kurtosis) package that deploys a private, portable, and modular Blockchain Deployment Kit layer3 BDK as devnet<br />
 LAIR3-BDK is derived from modest improvements to Polygon-SDK and Kurtosis-CDK dual licenced with inspiration from<br /><br />
-<a href="http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf">The Knowledge Complexity of Interactive Proof Systems</a><br />
+<a href="http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf">The Knowledge Complexity of Interactive Proof Systems</a><br /><br />
+reference: <a href="https://docs.kurtosis.com/">kurtosis-docs</a><br />
+           <a href="https://docs.polygon.technology/cdk/">polygon-cdk</a><br />
+           <a href="https://docs.polygon.technology/cdk/agglayer/overview/">agglayer-docs</a></b>
 
 ![Architecture Diagram](./docs/img/starlark.png)
 
