@@ -1,6 +1,5 @@
 # LAIR3-BDK2 layer 3 Blockchain Deployment Kit v2
 lair: a place where a wild animal, especially a fierce or dangerous one, lives<br />
-3: layer3 interoperable layer, web3<br />
 
 A [Kurtosis](https://github.com/kurtosis-tech/kurtosis) package that deploys a private, portable, and modular Blockchain Deployment Kit layer3 BDK as devnet<br />
 LAIR3-BDK is derived from modest improvements to Polygon-SDK and Kurtosis-CDK dual licenced with inspiration from<br /><br />
