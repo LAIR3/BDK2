@@ -439,7 +439,7 @@ For more information about the CDK stack and setting up Kurtosis, visit [documen
 ## License
 <a href="https://github.com/kurtosis-tech/kurtosis">Kurtosis-CDK</a> (c) 2024 PT Services DMCC MIT licence<br />
 Polygon-SDK (c) LGPL-3.0 license<br />
-<a href="https://github.com/0xPolygon/polygon-cli">polygon-cli</a> (c) AGPL-3.0 license
+<a href="https://github.com/0xPolygon/polygon-cli">polygon-cli</a> (c) AGPL-3.0 license<br />
 <a href="https://github.com/bazelbuild/starlark">Starlark</a> (c) Apache License Version 2.0<br >
 modifications included for LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
 
