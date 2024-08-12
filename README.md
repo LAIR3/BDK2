@@ -5,17 +5,6 @@ A [Kurtosis](https://github.com/kurtosis-tech/kurtosis) package that deploys a p
 LAIR3-BDK is derived from modest improvements to Polygon-SDK and Kurtosis-CDK dual licenced with inspiration from<br /><br />
 <a href="http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf">The Knowledge Complexity of Interactive Proof Systems</a><br />
 
-## License
-<a href="https://github.com/kurtosis-tech/kurtosis">Kurtosis-CDK</a> (c) 2024 PT Services DMCC MIT licence<br />
-Polygon-SDK (c) LGPL-3.0 license<br />
-<a href="https://github.com/0xPolygon/polygon-cli">polygon-cli</a> (c) AGPL-3.0 license
-<a href="https://github.com/bazelbuild/starlark">Starlark</a> (c) Apache License Version 2.0<br >
-modifications included for LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
-
-
-- Apache License, Version 2.0, ([LICENSE-APACHE](./LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0), or
-- MIT license ([LICENSE-MIT](./LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
 ![Architecture Diagram](./docs/img/starlark.png)
 
 To begin, you will need to install [Docker](https://docs.docker.com/get-docker/) and [Kurtosis](https://docs.kurtosis.com/install/).
@@ -35,7 +24,7 @@ kurtosis clean --all
 kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
 ```
 
-The command above deploys a CDK stack using [zkevm-node](https://github.com/0xPolygonHermez/zkevm-node) as the sequencer. Alternatively, to launch a CDK stack using [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) as a sequencer, you can run the following command.
+The command above deploys a BDK stack using [zkevm-node](https://github.com/0xPolygonHermez/zkevm-node) as the sequencer. Alternatively, to launch a CDK stack using [cdk-erigon](https://github.com/0xPolygonHermez/cdk-erigon) as a sequencer, you can run the following command.
 
 ```bash
 kurtosis run --enclave cdk-v1 --args-file cdk-erigon-sequencer-params.yml --image-download always .
@@ -119,16 +108,15 @@ kurtosis clean --all
 
 For more information about the CDK stack and setting up Kurtosis, visit [documentation](https://docs.polygon.technology/cdk/) on the Polygon Knowledge Layer.
 
-# License
-
-Copyright (c) 2024 PT Services DMCC
-
-Licensed under either:
+## License
+<a href="https://github.com/kurtosis-tech/kurtosis">Kurtosis-CDK</a> (c) 2024 PT Services DMCC MIT licence<br />
+Polygon-SDK (c) LGPL-3.0 license<br />
+<a href="https://github.com/0xPolygon/polygon-cli">polygon-cli</a> (c) AGPL-3.0 license
+<a href="https://github.com/bazelbuild/starlark">Starlark</a> (c) Apache License Version 2.0<br >
+modifications included for LAIR3-BDK (c) 2024 Gregory L. Magnusson MIT licence
 
 - Apache License, Version 2.0, ([LICENSE-APACHE](./LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0), or
 - MIT license ([LICENSE-MIT](./LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-as your option.
 
 The SPDX license identifier for this project is `MIT` OR `Apache-2.0`.
 
