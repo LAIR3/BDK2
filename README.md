@@ -80,7 +80,7 @@ kurtosis service logs cdk-v1 zkevm-agglayer-001
 
 # enter service with shell
 ```bash
-kurtosis service shell cdk-v1 zkevm-node-sequencer-001
+kurtosis service shell bdk-v2 zkevm-node-sequencer-001
 ```
 
 One of the most common ways to check the status of the system is to make sure that batches are going through the normal progression of trusted, virtual, and verified:
