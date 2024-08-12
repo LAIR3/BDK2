@@ -12,9 +12,9 @@ reference:<br />
 
 ![Architecture Diagram](./docs/img/starlark.png)
 
-To begin, you will need to install [Docker](https://docs.docker.com/get-docker/) and [Kurtosis](https://docs.kurtosis.com/install/).
+To begin install [Docker](https://docs.docker.com/get-docker/) and [Kurtosis](https://docs.kurtosis.com/install/).
 
-You will also need a few other tools. Run this script to check you have the required versions.
+run tool_check to test for version requirements
 
 ```bash
 sh scripts/tool_check.sh
